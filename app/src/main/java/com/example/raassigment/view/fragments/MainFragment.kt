@@ -247,6 +247,10 @@ class MainFragment : Fragment(), FacilityOptionsAdapter.OnItemClick {
     private fun clickNumber() {
         for (j in allOptionsList) {
             if (j.isSelected == Constants.SELECTED) {
+
+
+
+
                 selectedCount++
             }
         }
