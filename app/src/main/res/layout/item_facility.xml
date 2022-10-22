@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="facility"
+            type="com.example.raassigment.model.dataclasses.Facility" />
+        <variable
+            name="onItemClick"
+            type="com.example.raassigment.view.adapter.FacilityOptionsAdapter.OnItemClick" />
+        <variable
+            name="facilities"
+            type="com.example.raassigment.model.dataclasses.Facilities" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tv_facility_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_18sp"
+            android:layout_marginStart="@dimen/_4dp"
+            android:text="@{facility.name}"
+            app:layout_constraintBottom_toTopOf="@id/rv_facility_options"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Facility name" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_facility_options"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:setOptions="@{facilities}"
+            app:listener="@{onItemClick}"
+            app:index="@{facility.index}"
+            android:paddingBottom="@dimen/_4dp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_facility_name"
+            tools:listitem="@layout/item_facility_option" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
