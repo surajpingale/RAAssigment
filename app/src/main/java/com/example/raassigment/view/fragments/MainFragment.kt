@@ -215,7 +215,6 @@ class MainFragment : Fragment(), FacilityOptionsAdapter.OnItemClick {
                                     if (exclusion.facilityId == facilityList[o].facilityId
                                         && exclusion.optionsId == optionForExclusion.id
                                     ) {
-                                        Log.d("suraj", "option.. $option")
                                         val disable = facilities.facilities[o]
                                             .options[p]
                                         disable.isSelected = Constants.DISABLED
@@ -247,9 +246,6 @@ class MainFragment : Fragment(), FacilityOptionsAdapter.OnItemClick {
     private fun clickNumber() {
         for (j in allOptionsList) {
             if (j.isSelected == Constants.SELECTED) {
-
-
-
 
                 selectedCount++
             }
